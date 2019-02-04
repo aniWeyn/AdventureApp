@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div *ngIf="categories">
+    <p>Categories:</p>
+          <a *ngFor="let category of categories"  id="{{category.id}}" [routerLink]="" 
+          (click)="getSubcategories(category.id)" class="queryCategories">
+            {{category.name}} 
+            <span class="badge badge-primary badge-pill">{{category.countedSubcategories}}</span>
+          </a>
+    </div>
+    
+    <div *ngIf="subcategories">
+    <app-subcategory [subcategories]='subcategories' ></app-subcategory>
+    </div>
+</div>
+
+
+
+
+<!--<a *ngFor="let category of categories"  id="{{category.name}}" [routerLink]="['/categories', category.productCategoryId]">
+  {{category.name}} 
+  <span class="badge badge-primary badge-pill">{{category.countedSubcategories}}</span>
+</a>-->
+
+

@@ -1,0 +1,24 @@
+<div class="header-padding">
+  <p>Look for your equipment by:</p>
+</div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <div class="dropdown">
+      <button class="btn btn-outline-secondary dropdown-toggle" id="buttonSearchBy" type="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false" data-serch="all">Product Name</button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" id="pName">Product Name</a>
+        <a class="dropdown-item" id="pId">Product ID</a>
+        <a class="dropdown-item" id="pCode">Product code</a>
+        <input id="searchBy" name="searchBy" type="hidden" value="all">
+      </div>
+    </div>
+  </div>
+  <input #box (keyup.enter)="onEnter(box.value)" type="text" class="form-control form-product" placeholder="Search... mountain"
+    aria-label="Search...">
+</div>
+<div class="searchResult" id="searchResult">
+  <div *ngIf="searchedProduct">
+    <app-product-filter [searchedProduct]='searchedProduct'></app-product-filter>
+  </div>
+</div>

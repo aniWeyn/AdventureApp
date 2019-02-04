@@ -1,0 +1,16 @@
+<div>
+  <hr>
+  <p>
+    Subcategories:
+  </p>
+  <div *ngIf="subcategories">
+  <a *ngFor="let subcategory of subcategories"  id="{{subcategory.id}}" [routerLink]="" class="queryCategories" 
+  (click)="getProductsBySubcategoryId(subcategory.id)">
+    {{subcategory.name}} 
+    <span class="badge badge-primary badge-pill">{{subcategory.countedProducts}}</span>
+  </a>
+</div>
+</div>
+<div *ngIf="productsdetails">
+  <app-product-detail [productsdetails]='productsdetails'></app-product-detail>
+</div>

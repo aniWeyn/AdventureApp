@@ -1,0 +1,15 @@
+<div>
+    <hr>
+    <p>
+      Products:
+    </p>
+    <div *ngIf="productslist">
+    <a *ngFor="let productEnt of productslist"  id="{{productEnt.id}}" [routerLink]="" class="queryCategories" >
+      {{productEnt.name}} 
+    </a>
+  </div>
+  </div>
+
+  <!--<div *ngIf="productsdetails">-->
+  <app-product-detail></app-product-detail>
+<!--</div>-->
